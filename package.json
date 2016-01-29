@@ -1,0 +1,28 @@
+{
+  "name": "angular2-signaturepad",
+  "version": "1.0.0",
+  "description": "Angular2 Component wrapper for szimek / signature_pad",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulfsolter/angular2-signaturepad.git"
+  },
+  "keywords": [
+    "signature",
+    "sign",
+    "finger",
+    "canvas"
+  ],
+  "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/wulfsolter/angular2-signaturepad/issues"
+  },
+  "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
+  "dependencies": {
+    "signature_pad": "^1.5.2"
+  }
+}
