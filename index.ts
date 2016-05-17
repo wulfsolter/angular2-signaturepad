@@ -27,7 +27,17 @@ export class SignaturePad {
 
   public ngAfterContentInit(): void {
     let sp: any = require('signature_pad');
-    let canvas: any = this.elementRef.nativeElement.getElementsByTagName('canvas')[0];
+    let canvas: any = this.elementRef.nativeElement.querySelector('canvas');
+    let canvasHeightKey: string = 'canvasHeight';
+
+    if ((<any>this.options)['canvasHeight']) {
+      canvas.height = (<any>this.options)['canvasHeight'];
+    }
+
+    if ((<any>this.options)['canvasWidth']) {
+      canvas.width = (<any>this.options)['canvasWidth'];
+    }
+
     this.signaturePad = new sp(canvas, this.options);
     this.signaturePad.onEnd = this.onEnd.bind(this);
   }
@@ -64,7 +74,17 @@ export class SignaturePad {
 
   // set an option on the signaturePad - e.g. set('minWidth', 50);
   public set(option: string, value: any): void {
-    this.signaturePad[option] = value;
+
+    switch (option) {
+      case 'canvasHeight':
+        this.signaturePad._canvas.height = value;
+        break;
+      case 'canvasWidth':
+        this.signaturePad._canvas.width = value;
+        break;
+      default:
+        this.signaturePad[option] = value;
+    }
   }
 
   // notify subscribers on signature end

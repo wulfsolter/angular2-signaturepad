@@ -6,6 +6,13 @@ Angular 2 component for [szimek/signature_pad](https://www.npmjs.com/package/sig
 
 ## Usage example
 
+API is identical to [szimek/signature_pad](https://www.npmjs.com/package/signature_pad).
+
+Options are as per [szimek/signature_pad](https://www.npmjs.com/package/signature_pad) with the following additions:
+* canvasWidth: width of the canvas (px)
+* canvasHeight: height of the canvas (px)
+The above options are provided to avoid accessing the DOM directly from your component to adjust the canvas size.
+
 ```typescript
 import { Component, ViewChild } from 'angular2/core';
 import { SignaturePad } from 'angular2-signaturepad';
@@ -20,7 +27,9 @@ export class SignaturePadPage{
   @ViewChild(SignaturePad) signaturePad: SignaturePad;
 
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
-    'minWidth': 5
+    'minWidth': 5,
+    'canvasWidth': 500,
+    'canvasHeight'
   };
 
   constructor() {
