@@ -12,56 +12,59 @@ declare var require: any;
 
 export class SignaturePad {
 
-  private signature_pad: any;
-  @Input() options: Object;
+  @Input() private options: Object;
   @Output() private onEndEvent: EventEmitter<boolean>;
 
-  constructor(private elementRef: ElementRef) {
+  private signaturePad: any;
+  private elementRef: ElementRef;
+
+  constructor(elementRef: ElementRef) {
     // no op
+    this.elementRef = elementRef;
     this.options = this.options || {};
     this.onEndEvent = new EventEmitter();
   }
 
-  ngAfterContentInit() {
-    let sp = require('signature_pad');
-    let canvas = this.elementRef.nativeElement.getElementsByTagName('canvas')[0];
-    this.signature_pad = new sp(canvas, this.options);
-    this.signature_pad.onEnd = this.onEnd.bind(this);
+  public ngAfterContentInit(): void {
+    let sp: any = require('signature_pad');
+    let canvas: any = this.elementRef.nativeElement.getElementsByTagName('canvas')[0];
+    this.signaturePad = new sp(canvas, this.options);
+    this.signaturePad.onEnd = this.onEnd.bind(this);
   }
 
   // Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible paramters)
   public toDataURL(): string {
-    return this.signature_pad.toDataURL(); // save image as PNG
+    return this.signaturePad.toDataURL(); // save image as PNG
   }
 
   // Draws signature image from data URL
   public fromDataURL(dataURL: string): void {
-    this.signature_pad.fromDataURL(dataURL);
+    this.signaturePad.fromDataURL(dataURL);
   }
 
   // Clears the canvas
   public clear(): void {
-    this.signature_pad.clear();
+    this.signaturePad.clear();
   }
 
   // Returns true if canvas is empty, otherwise returns false
   public isEmpty(): boolean {
-    return this.signature_pad.isEmpty();
+    return this.signaturePad.isEmpty();
   }
 
   // Unbinds all event handlers
   public off(): void {
-    this.signature_pad.off();
+    this.signaturePad.off();
   }
 
   // Rebinds all event handlers
   public on(): void {
-    this.signature_pad.on();
+    this.signaturePad.on();
   }
 
   // set an option on the signaturePad - e.g. set('minWidth', 50);
   public set(option: string, value: any): void {
-    this.signature_pad[option] = value;
+    this.signaturePad[option] = value;
   }
 
   // notify subscribers on signature end

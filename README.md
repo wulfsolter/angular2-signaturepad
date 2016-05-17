@@ -35,6 +35,7 @@ export class SignaturePadPage{
 
   doOnEnd() {
     // will be notified of szimek/signature_pad's onEnd event
+    console.log(this.signaturePad.toDataURL());
   }
 }
 ```
