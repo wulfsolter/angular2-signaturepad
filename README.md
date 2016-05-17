@@ -1,0 +1,40 @@
+# angular2-signaturepad
+Angular 2 component for [szimek/signature_pad](https://www.npmjs.com/package/signature_pad).
+
+## Install
+`npm install angular2-signaturepad --save`
+
+## Usage example
+
+```typescript
+import { Component, ViewChild } from 'angular2/core';
+import { SignaturePad } from 'angular2-signaturepad';
+
+@Component({
+  template: '<signature-pad [options]="signaturePadOptions" (onEndEvent)="doOnEnd()"></signature-pad>',
+  directives: [SignaturePad]
+})
+
+export class SignaturePadPage{
+
+  @ViewChild(SignaturePad) signaturePad: SignaturePad;
+
+  private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
+    'minWidth': 5
+  };
+
+  constructor() {
+    // no-op
+  }
+
+  ngAfterViewInit() {
+    // this.signaturePad is now available
+    this.signaturePad.set('minWidth', 5); // set szimek/signature_pad options at runtime
+    this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
+  }
+
+  doOnEnd() {
+    // will be notified of szimek/signature_pad's onEnd event
+  }
+}
+```

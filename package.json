@@ -1,9 +1,11 @@
 {
   "name": "angular2-signaturepad",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Angular2 Component wrapper for szimek / signature_pad",
   "main": "index.js",
+  "typings": "./index.d.ts",
   "scripts": {
+    "prepublish": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -24,5 +26,8 @@
   "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
   "dependencies": {
     "signature_pad": "^1.5.2"
+  },
+  "peerDependencies": {
+    "angular2": "^2.0.0-beta.15"
   }
 }
