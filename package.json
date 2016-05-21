@@ -28,6 +28,6 @@
     "signature_pad": "^1.5.2"
   },
   "peerDependencies": {
-    "angular2": "^2.0.0-beta.15"
+    "@angular/core": "^2.0.0-rc.1"
   }
 }

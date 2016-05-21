@@ -1,6 +1,6 @@
 'use strict';
 
-import { Component, ElementRef, EventEmitter, Input, Output } from 'angular2/core';
+import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 
 declare var require: any;
 
