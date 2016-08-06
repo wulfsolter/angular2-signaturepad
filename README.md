@@ -29,7 +29,7 @@ export class SignaturePadPage{
   private signaturePadOptions: Object = { // passed through to szimek/signature_pad constructor
     'minWidth': 5,
     'canvasWidth': 500,
-    'canvasHeight'
+    'canvasHeight': 300
   };
 
   constructor() {
