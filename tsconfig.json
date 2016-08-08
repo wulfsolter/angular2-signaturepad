@@ -10,7 +10,7 @@
     },
     "files": [
         "index.ts",
-        "typings/browser.d.ts"
+        "typings/index.d.ts"
     ],
     "exclude": [
         "node_modules"
