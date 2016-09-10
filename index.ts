@@ -41,7 +41,7 @@ export class SignaturePad {
     this.signaturePad = new sp(canvas, this.options);
     this.signaturePad.onEnd = this.onEnd.bind(this);
   }
-  
+
   public resizeCanvas(): void {
     // When zoomed out to less than 100%, for some very strange reason,
     // some browsers report devicePixelRatio as less than 1
