@@ -5,7 +5,6 @@ import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/cor
 declare var require: any;
 
 @Component({
-  inputs: ['options'],
   template: '<canvas></canvas>',
   selector: 'signature-pad',
 })
