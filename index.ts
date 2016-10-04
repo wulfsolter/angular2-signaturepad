@@ -1,8 +1,14 @@
 'use strict';
 
-import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import { NgModule, Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
 
 declare var require: any;
+
+@NgModule({
+  declarations: [SignaturePad],
+  exports: [SignaturePad]
+})
+export class SignaturePadModule {}
 
 @Component({
   template: '<canvas></canvas>',
