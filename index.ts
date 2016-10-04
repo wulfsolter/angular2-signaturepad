@@ -17,8 +17,8 @@ export class SignaturePadModule {}
 
 export class SignaturePad {
 
-  @Input() private options: Object;
-  @Output() private onEndEvent: EventEmitter<boolean>;
+  @Input() options: Object;
+  @Output() onEndEvent: EventEmitter<boolean>;
 
   private signaturePad: any;
   private elementRef: ElementRef;
