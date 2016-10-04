@@ -9,7 +9,8 @@
         "declaration": true
     },
     "files": [
-        "index.ts"
+        "index.ts",
+        "typings/index.d.ts"
     ],
     "exclude": [
         "node_modules"
