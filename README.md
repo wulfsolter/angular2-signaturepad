@@ -31,7 +31,7 @@ import { SignaturePadModule } from 'angular2-signaturepad';
 // then import for use in a component
 
 import { Component, ViewChild } from 'angular2/core';
-import { SignaturePad } from 'angular2-signaturepad';
+import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 
 @Component({
   template: '<signature-pad [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>'
