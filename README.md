@@ -14,12 +14,27 @@ Options are as per [szimek/signature_pad](https://www.npmjs.com/package/signatur
 The above options are provided to avoid accessing the DOM directly from your component to adjust the canvas size.
 
 ```typescript
+
+// import into app module
+
+import { SignaturePadModule } from 'angular2-signaturepad';
+
+...
+
+@NgModule({
+  declarations: [ ],
+  imports: [ SignaturePadModule ],
+  providers: [ ],
+  bootstrap: [ AppComponent ]
+})
+
+// then import for use in a component
+
 import { Component, ViewChild } from 'angular2/core';
 import { SignaturePad } from 'angular2-signaturepad';
 
 @Component({
-  template: '<signature-pad [options]="signaturePadOptions" (onEndEvent)="doOnEnd()"></signature-pad>',
-  directives: [SignaturePad]
+  template: '<signature-pad [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>'
 })
 
 export class SignaturePadPage{
@@ -48,3 +63,7 @@ export class SignaturePadPage{
   }
 }
 ```
+
+## Demo App
+
+https://github.com/lathonez/angular2-signaturepad-demo
