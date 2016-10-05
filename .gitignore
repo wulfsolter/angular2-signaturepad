@@ -10,3 +10,8 @@ Thumbs.db
 *.js
 *.map
 *.d.ts
+
+typings
+
+ngfactory
+*.metadata.json
