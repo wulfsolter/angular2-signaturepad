@@ -1,6 +1,6 @@
 {
   "name": "angular2-signaturepad",
-  "version": "2.0.0",
+  "version": "2.0.1",
   "description": "Angular2 Component wrapper for szimek / signature_pad",
   "main": "index.js",
   "typings": "./index.d.ts",
