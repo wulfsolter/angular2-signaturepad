@@ -34,7 +34,7 @@ import { Component, ViewChild } from 'angular2/core';
 import { SignaturePad } from 'angular2-signaturepad/signature-pad';
 
 @Component({
-  template: '<signature-pad [options]="signaturePadOptions" (onEndEvent)="drawComplete()"></signature-pad>'
+  template: '<signature-pad [options]="signaturePadOptions" (onBeginEvent)="drawStart()" (onEndEvent)="drawComplete()"></signature-pad>'
 })
 
 export class SignaturePadPage{
@@ -57,9 +57,14 @@ export class SignaturePadPage{
     this.signaturePad.clear(); // invoke functions from szimek/signature_pad API
   }
 
-  doOnEnd() {
+  drawComplete() {
     // will be notified of szimek/signature_pad's onEnd event
     console.log(this.signaturePad.toDataURL());
+  }
+
+  drawStart() {
+    // will be notified of szimek/signature_pad's onBegin event
+    console.log('begin drawing');
   }
 }
 ```

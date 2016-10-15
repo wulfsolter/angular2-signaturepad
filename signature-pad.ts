@@ -12,6 +12,7 @@ declare var require: any;
 export class SignaturePad {
 
   @Input() public options: Object;
+  @Output() public onBeginEvent: EventEmitter<boolean>;
   @Output() public onEndEvent: EventEmitter<boolean>;
 
   private signaturePad: any;
@@ -21,6 +22,7 @@ export class SignaturePad {
     // no op
     this.elementRef = elementRef;
     this.options = this.options || {};
+    this.onBeginEvent = new EventEmitter();
     this.onEndEvent = new EventEmitter();
   }
 
@@ -37,6 +39,7 @@ export class SignaturePad {
     }
 
     this.signaturePad = new sp(canvas, this.options);
+    this.signaturePad.onBegin = this.onBegin.bind(this);
     this.signaturePad.onEnd = this.onEnd.bind(this);
   }
 
@@ -95,6 +98,11 @@ export class SignaturePad {
       default:
         this.signaturePad[option] = value;
     }
+  }
+
+  // notify subscribers on signature begin
+  public onBegin(): void {
+    this.onBeginEvent.emit(true);
   }
 
   // notify subscribers on signature end
