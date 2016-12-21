@@ -47,7 +47,7 @@ export class SignaturePad {
     // When zoomed out to less than 100%, for some very strange reason,
     // some browsers report devicePixelRatio as less than 1
     // and only part of the canvas is cleared then.
-    const ratio: number =  Math.max(window.devicePixelRatio || 1, 1);
+    const ratio: number = Math.max(window.devicePixelRatio || 1, 1);
     const canvas: any = this.signaturePad._canvas;
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
@@ -56,8 +56,8 @@ export class SignaturePad {
   }
 
   // Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible paramters)
-  public toDataURL(): string {
-    return this.signaturePad.toDataURL(); // save image as PNG
+  public toDataURL(imageType?: string, quality?: number): string {
+    return this.signaturePad.toDataURL(imageType, quality); // save image as data URL
   }
 
   // Draws signature image from data URL
