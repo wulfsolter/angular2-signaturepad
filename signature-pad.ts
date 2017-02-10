@@ -55,14 +55,6 @@ export class SignaturePad {
     this.signaturePad.clear(); // otherwise isEmpty() might return incorrect value
   }
 
-  // sets canvas size explicitly (resize after init)
-  public setSize(padWidth: number, padHeight: number): void {
-      var canvas: any = this.signaturePad._canvas;
-      canvas.width = padWidth;
-      canvas.height = padHeight;
-      this.signaturePad.clear(); // otherwise isEmpty() might return incorrect value
-  }
-
   // Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible paramters)
   public toDataURL(imageType?: string, quality?: number): string {
     return this.signaturePad.toDataURL(imageType, quality); // save image as data URL
