@@ -1,8 +1,7 @@
 'use strict';
 
 import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
-
-declare var require: any;
+import * as SzimekSignaturePad from 'signature_pad';
 
 export interface Point {
   x: number;
@@ -33,7 +32,6 @@ export class SignaturePad {
   }
 
   public ngAfterContentInit(): void {
-    let sp: any = require('signature_pad');
     let canvas: any = this.elementRef.nativeElement.querySelector('canvas');
 
     if ((<any>this.options)['canvasHeight']) {
@@ -44,7 +42,7 @@ export class SignaturePad {
       canvas.width = (<any>this.options)['canvasWidth'];
     }
 
-    this.signaturePad = new sp(canvas, this.options);
+    this.signaturePad = new SzimekSignaturePad(canvas, this.options);
     this.signaturePad.onBegin = this.onBegin.bind(this);
     this.signaturePad.onEnd = this.onEnd.bind(this);
   }
