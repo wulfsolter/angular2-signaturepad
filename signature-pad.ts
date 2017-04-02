@@ -1,13 +1,8 @@
 'use strict';
 
 import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
-import * as SzimekSignaturePad from 'signature_pad';
 
-export interface Point {
-  x: number;
-  y: number;
-  time: number;
-};
+declare var require: any;
 
 @Component({
   template: '<canvas></canvas>',
@@ -32,6 +27,7 @@ export class SignaturePad {
   }
 
   public ngAfterContentInit(): void {
+    let sp: any = require('signature_pad');
     let canvas: any = this.elementRef.nativeElement.querySelector('canvas');
 
     if ((<any>this.options)['canvasHeight']) {
@@ -42,7 +38,7 @@ export class SignaturePad {
       canvas.width = (<any>this.options)['canvasWidth'];
     }
 
-    this.signaturePad = new SzimekSignaturePad(canvas, this.options);
+    this.signaturePad = new sp(canvas, this.options);
     this.signaturePad.onBegin = this.onBegin.bind(this);
     this.signaturePad.onEnd = this.onEnd.bind(this);
   }
@@ -57,16 +53,6 @@ export class SignaturePad {
     canvas.height = canvas.offsetHeight * ratio;
     canvas.getContext('2d').scale(ratio, ratio);
     this.signaturePad.clear(); // otherwise isEmpty() might return incorrect value
-  }
-
-   // Returns signature image as an array of point groups
-  public toData(): Array<Point> {
-    return this.signaturePad.toData();
-  }
-
-  // Draws signature image from an array of point groups
-  public fromData(points: Array<Point>): void {
-    this.signaturePad.fromData(points);
   }
 
   // Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible paramters)
