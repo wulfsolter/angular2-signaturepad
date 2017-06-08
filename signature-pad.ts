@@ -4,6 +4,12 @@ import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/cor
 
 declare var require: any;
 
+export interface Point {
+  x: number;
+  y: number;
+  time: number;
+};
+
 @Component({
   template: '<canvas></canvas>',
   selector: 'signature-pad',
@@ -27,7 +33,7 @@ export class SignaturePad {
   }
 
   public ngAfterContentInit(): void {
-    let sp: any = require('signature_pad');
+    let sp: any = require('signature_pad')['default'];
     let canvas: any = this.elementRef.nativeElement.querySelector('canvas');
 
     if ((<any>this.options)['canvasHeight']) {
@@ -53,6 +59,16 @@ export class SignaturePad {
     canvas.height = canvas.offsetHeight * ratio;
     canvas.getContext('2d').scale(ratio, ratio);
     this.signaturePad.clear(); // otherwise isEmpty() might return incorrect value
+  }
+
+   // Returns signature image as an array of point groups
+  public toData(): Array<Point> {
+    return this.signaturePad.toData();
+  }
+
+  // Draws signature image from an array of point groups
+  public fromData(points: Array<Point>): void {
+    this.signaturePad.fromData(points);
   }
 
   // Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible paramters)
