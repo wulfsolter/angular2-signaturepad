@@ -77,8 +77,8 @@ export class SignaturePad {
   }
 
   // Draws signature image from data URL
-  public fromDataURL(dataURL: string): void {
-    this.signaturePad.fromDataURL(dataURL);
+  public fromDataURL(dataURL: string, options: Object = {}): void {
+    this.signaturePad.fromDataURL(dataURL, options);
   }
 
   // Clears the canvas
