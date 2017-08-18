@@ -4,6 +4,11 @@ Angular 2 component for [szimek/signature_pad](https://www.npmjs.com/package/sig
 ## Install
 `npm install angular2-signaturepad --save`
 
+## Reference Implementation
+
+* [Live Demo](http://lathonez.com/angular2-signaturepad-demo/)
+* [Source](https://github.com/lathonez/angular2-signaturepad-demo)
+
 ## Usage example
 
 API is identical to [szimek/signature_pad](https://www.npmjs.com/package/signature_pad).
@@ -68,7 +73,3 @@ export class SignaturePadPage{
   }
 }
 ```
-
-## Demo App
-
-https://github.com/lathonez/angular2-signaturepad-demo
