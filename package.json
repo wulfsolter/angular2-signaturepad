@@ -36,7 +36,7 @@
     "url": "https://github.com/wulfsolter/angular2-signaturepad/issues"
   },
   "dependencies": {
-    "signature_pad": "2.2.0"
+
   },
   "description": "Angular2 Component wrapper for szimek / signature_pad",
   "devDependencies": {
