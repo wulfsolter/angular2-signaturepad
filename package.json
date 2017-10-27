@@ -1,32 +1,44 @@
 {
-  "name": "angular2-signaturepad",
-  "version": "2.6.1",
-  "description": "Angular2 Component wrapper for szimek / signature_pad",
-  "main": "index.js",
-  "typings": "./index.d.ts",
-  "scripts": {
-    "prepublish": "node ./node_modules/@angular/compiler-cli/src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wulfsolter/angular2-signaturepad.git"
-  },
-  "keywords": [
-    "signature",
-    "sign",
-    "finger",
-    "canvas"
+  "_args": [
+    [
+      "angular2-signaturepad@2.6.1",
+      "/Users/alan/app/arte"
+    ]
   ],
-  "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
-  "license": "MIT",
+  "_from": "angular2-signaturepad@2.6.1",
+  "_id": "angular2-signaturepad@2.6.1",
+  "_inBundle": false,
+  "_integrity": "sha1-lnuZeKurlzrM+MLdN8KpLredR1c=",
+  "_location": "/angular2-signaturepad",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "version",
+    "registry": true,
+    "raw": "angular2-signaturepad@2.6.1",
+    "name": "angular2-signaturepad",
+    "escapedName": "angular2-signaturepad",
+    "rawSpec": "2.6.1",
+    "saveSpec": null,
+    "fetchSpec": "2.6.1"
+  },
+  "_requiredBy": [
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/angular2-signaturepad/-/angular2-signaturepad-2.6.1.tgz",
+  "_spec": "2.6.1",
+  "_where": "/Users/alan/app/arte",
+  "author": {
+    "name": "Wulf Solter",
+    "email": "wulf@wulf.co.nz",
+    "url": "http://wulf.co.nz"
+  },
   "bugs": {
     "url": "https://github.com/wulfsolter/angular2-signaturepad/issues"
   },
-  "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
   "dependencies": {
-    "signature_pad": "2.2.0"
+
   },
+  "description": "Angular2 Component wrapper for szimek / signature_pad",
   "devDependencies": {
     "@angular/common": "2.0.1",
     "@angular/compiler": "2.0.1",
@@ -38,5 +50,25 @@
     "rxjs": "5.0.0-beta.12",
     "typescript": "2.0.3",
     "zone.js": "0.6.25"
-  }
+  },
+  "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
+  "keywords": [
+    "signature",
+    "sign",
+    "finger",
+    "canvas"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "name": "angular2-signaturepad",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/wulfsolter/angular2-signaturepad.git"
+  },
+  "scripts": {
+    "prepublish": "node ./node_modules/@angular/compiler-cli/src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "typings": "./index.d.ts",
+  "version": "2.6.1"
 }
