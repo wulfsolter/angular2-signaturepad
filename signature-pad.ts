@@ -10,7 +10,7 @@ export interface Point {
   time: number;
 };
 
-export type PointGroup = Point[];
+export type PointGroup = Array<Point>;
 
 @Component({
   template: '<canvas></canvas>',
@@ -64,12 +64,12 @@ export class SignaturePad {
   }
 
    // Returns signature image as an array of point groups
-  public toData(): PointGroup[] {
+  public toData(): Array<PointGroup> {
     return this.signaturePad.toData();
   }
 
   // Draws signature image from an array of point groups
-  public fromData(points: PointGroup[]): void {
+  public fromData(points: Array<PointGroup>): void {
     this.signaturePad.fromData(points);
   }
 
