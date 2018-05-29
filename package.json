@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
   "dependencies": {
-    "signature_pad": "2.3.2"
+    "signature_pad": "3.0.0-beta.2"
   },
   "devDependencies": {
     "@angular/common": "2.0.1",
