@@ -127,4 +127,8 @@ export class SignaturePad {
   public onEnd(): void {
     this.onEndEvent.emit(true);
   }
+
+	public queryPad(): any {
+		return this.signaturePad;
+	}
 }
