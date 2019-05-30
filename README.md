@@ -2,12 +2,9 @@
 Angular 2 component for [szimek/signature_pad](https://www.npmjs.com/package/signature_pad).
 
 ## Install
-`npm install angular2-signaturepad --save`
+`npm install ngx-signaturepad --save`
 
 ## Reference Implementation
-
-* [Live Demo](http://lathonez.com/angular2-signaturepad-demo/)
-* [Source](https://github.com/lathonez/angular2-signaturepad-demo)
 
 ## Usage example
 
