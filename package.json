@@ -1,16 +1,17 @@
 {
-  "name": "angular2-signaturepad",
-  "version": "2.8.0",
-  "description": "Angular2 Component wrapper for szimek / signature_pad",
+  "name": "ngx-signaturepad",
+  "version": "0.0.1",
+  "description": "Fork of wulfsolter/angular2-signaturepad",
   "main": "index.js",
   "typings": "./index.d.ts",
   "scripts": {
-    "prepublish": "node ./node_modules/@angular/compiler-cli/src/main.js",
+    "prepare": "node ./node_modules/@angular/compiler-cli/src/main.js",
+    "prepublishOnly": "node ./node_modules/@angular/compiler-cli/src/main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/wulfsolter/angular2-signaturepad.git"
+    "url": "git+https://github.com/fclemonschoool/ngx-signaturepad.git"
   },
   "keywords": [
     "signature",
@@ -21,22 +22,23 @@
   "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/wulfsolter/angular2-signaturepad/issues"
+    "url": "https://github.com/fclemonschoool/ngx-signaturepad/issues"
   },
-  "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
+  "homepage": "https://github.com/fclemonschoool/ngx-signaturepad#readme",
   "dependencies": {
-    "signature_pad": "2.3.2"
+    "signature_pad": "^3.0.0-beta.3"
   },
   "devDependencies": {
-    "@angular/common": "2.0.1",
-    "@angular/compiler": "2.0.1",
-    "@angular/compiler-cli": "0.6.3",
-    "@angular/core": "2.0.1",
-    "@angular/platform-browser": "2.0.1",
-    "@angular/platform-browser-dynamic": "2.0.1",
-    "@angular/platform-server": "2.0.1",
-    "rxjs": "5.0.0-beta.12",
-    "typescript": "2.0.3",
-    "zone.js": "0.6.25"
+    "@angular/common": "^8.0.0",
+    "@angular/compiler": "^8.0.0",
+    "@angular/compiler-cli": "^8.0.0",
+    "@angular/core": "^8.0.0",
+    "@angular/animations": "^8.0.0",
+    "@angular/platform-browser": "^8.0.0",
+    "@angular/platform-browser-dynamic": "^8.0.0",
+    "@angular/platform-server": "^8.0.0",
+    "rxjs": "^6.5.2",
+    "typescript": "3.4.5",
+    "zone.js": "^0.9.1"
   }
 }
