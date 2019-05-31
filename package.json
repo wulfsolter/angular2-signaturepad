@@ -1,6 +1,6 @@
 {
   "name": "ngx-signaturepad",
-  "version": "0.0.1",
+  "version": "0.0.3",
   "description": "Fork of wulfsolter/angular2-signaturepad",
   "main": "index.js",
   "typings": "./index.d.ts",
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/fclemonschoool/ngx-signaturepad.git"
+    "url": "git+https://github.com/fclemonschool/ngx-signaturepad.git"
   },
   "keywords": [
     "signature",
@@ -22,9 +22,9 @@
   "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/fclemonschoool/ngx-signaturepad/issues"
+    "url": "https://github.com/fclemonschool/ngx-signaturepad/issues"
   },
-  "homepage": "https://github.com/fclemonschoool/ngx-signaturepad#readme",
+  "homepage": "https://github.com/fclemonschool/ngx-signaturepad#readme",
   "dependencies": {
     "signature_pad": "^3.0.0-beta.3"
   },
