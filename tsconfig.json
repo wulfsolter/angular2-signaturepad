@@ -11,8 +11,9 @@
     "suppressImplicitAnyIndexErrors": true,
     "moduleResolution": "node",
     "lib": [
+      "es2015",
       "dom",
-      "es6"
+      "es5"
     ]
   },
   "exclude": [
