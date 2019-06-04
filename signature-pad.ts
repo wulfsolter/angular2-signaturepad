@@ -1,8 +1,7 @@
 'use strict';
 
 import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
-
-declare var require: any;
+import * as sPad from 'signature_pad';
 
 export interface Point {
   x: number;
@@ -35,7 +34,7 @@ export class SignaturePad {
   }
 
   public ngAfterContentInit(): void {
-    let sp: any = require('signature_pad')['default'];
+    let sp: any = sPad;
     let canvas: any = this.elementRef.nativeElement.querySelector('canvas');
 
     if ((<any>this.options)['canvasHeight']) {
@@ -105,7 +104,6 @@ export class SignaturePad {
 
   // set an option on the signaturePad - e.g. set('minWidth', 50);
   public set(option: string, value: any): void {
-
     switch (option) {
       case 'canvasHeight':
         this.signaturePad._canvas.height = value;
@@ -128,7 +126,7 @@ export class SignaturePad {
     this.onEndEvent.emit(true);
   }
 
-	public queryPad(): any {
-		return this.signaturePad;
-	}
+  public queryPad(): any {
+      return this.signaturePad;
+  }
 }
