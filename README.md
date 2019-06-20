@@ -1,4 +1,7 @@
 # ngx-signaturepad
+![GitHub](https://img.shields.io/github/license/fclemonschool/ngx-signaturepad.svg)
+![npm (tag)](https://img.shields.io/npm/v/ngx-signaturepad/latest.svg)
+
 Fork of [wulfsolter/angular2-signaturepad](https://www.npmjs.com/package/angular2-signaturepad).
 
 ## Install
