@@ -1,0 +1,44 @@
+{
+  "name": "ngx-signaturepad",
+  "version": "0.0.6",
+  "description": "Fork of wulfsolter/angular2-signaturepad",
+  "main": "index.js",
+  "typings": "./index.d.ts",
+  "scripts": {
+    "prepare": "node ./node_modules/@angular/compiler-cli/src/main.js",
+    "prepublishOnly": "node ./node_modules/@angular/compiler-cli/src/main.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fclemonschool/ngx-signaturepad.git"
+  },
+  "keywords": [
+    "signature",
+    "sign",
+    "finger",
+    "canvas"
+  ],
+  "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fclemonschool/ngx-signaturepad/issues"
+  },
+  "homepage": "https://github.com/fclemonschool/ngx-signaturepad#readme",
+  "dependencies": {
+    "signature_pad": "^3.0.0-beta.3"
+  },
+  "devDependencies": {
+    "@angular/common": "^8.0.2",
+    "@angular/compiler": "^8.0.2",
+    "@angular/compiler-cli": "^8.0.2",
+    "@angular/core": "^8.0.2",
+    "@angular/animations": "^8.0.2",
+    "@angular/platform-browser": "^8.0.2",
+    "@angular/platform-browser-dynamic": "^8.0.2",
+    "@angular/platform-server": "^8.0.2",
+    "rxjs": "^6.5.2",
+    "typescript": "3.4.5",
+    "zone.js": "^0.9.1"
+  }
+}
