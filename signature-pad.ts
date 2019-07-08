@@ -80,6 +80,13 @@ export class SignaturePad {
 
   // Draws signature image from data URL
   public fromDataURL(dataURL: string, options: Object = {}): void {
+    // set default height and width on read data from URL
+    if (!options.hasOwnProperty('height') && (<any>this.options)['canvasHeight']) {
+      options['height'] = (<any>this.options)['canvasHeight'];
+    }
+    if (!options.hasOwnProperty('width') && (<any>this.options)['canvasWidth']) {
+      options['width'] = (<any>this.options)['canvasWidth'];
+    }
     this.signaturePad.fromDataURL(dataURL, options);
   }
 
