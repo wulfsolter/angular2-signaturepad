@@ -14,6 +14,8 @@ Angular 2 component for [szimek/signature_pad](https://www.npmjs.com/package/sig
 API is identical to [szimek/signature_pad](https://www.npmjs.com/package/signature_pad).
 
 Options are as per [szimek/signature_pad](https://www.npmjs.com/package/signature_pad) with the following additions:
+* canvasId: ID of the canvas element
+* canvasClass: CSS class to be added to the canvas element
 * canvasWidth: width of the canvas (px)
 * canvasHeight: height of the canvas (px)
 The above options are provided to avoid accessing the DOM directly from your component to adjust the canvas size.

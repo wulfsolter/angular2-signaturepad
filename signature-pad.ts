@@ -37,7 +37,15 @@ export class SignaturePad {
   public ngAfterContentInit(): void {
     let sp: any = require('signature_pad')['default'];
     let canvas: any = this.elementRef.nativeElement.querySelector('canvas');
+    
+    if ((<any>this.options)['canvasId']) {
+      canvas.id = (<any>this.options)['canvasId'];
+    }
 
+    if ((<any>this.options)['canvasClass']) {
+      canvas.classList.add((<any>this.options)['canvasClass']);
+    }
+    
     if ((<any>this.options)['canvasHeight']) {
       canvas.height = (<any>this.options)['canvasHeight'];
     }
