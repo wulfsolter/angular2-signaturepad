@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/noamyg/angular2-signaturepad.git"
+    "url": "git+https://github.com/wulfsolter/angular2-signaturepad.git"
   },
   "keywords": [
     "signature",
@@ -21,9 +21,9 @@
   "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/noamyg/angular2-signaturepad/issues"
+    "url": "https://github.com/wulfsolter/angular2-signaturepad/issues"
   },
-  "homepage": "https://github.com/noamyg/angular2-signaturepad#readme",
+  "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
   "dependencies": {
     "signature_pad": "2.3.2"
   },
