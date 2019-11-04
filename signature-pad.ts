@@ -1,6 +1,6 @@
 'use strict';
 
-import { Component, ElementRef, EventEmitter, Input, Output } from '@angular/core';
+import {AfterContentInit, Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
 
 declare var require: any;
 
@@ -8,7 +8,7 @@ export interface Point {
   x: number;
   y: number;
   time: number;
-};
+}
 
 export type PointGroup = Array<Point>;
 
@@ -17,9 +17,9 @@ export type PointGroup = Array<Point>;
   selector: 'signature-pad',
 })
 
-export class SignaturePad {
+export class SignaturePad implements AfterContentInit {
 
-  @Input() public options: Object;
+  @Input() public options: object;
   @Output() public onBeginEvent: EventEmitter<boolean>;
   @Output() public onEndEvent: EventEmitter<boolean>;
 
@@ -35,15 +35,15 @@ export class SignaturePad {
   }
 
   public ngAfterContentInit(): void {
-    let sp: any = require('signature_pad')['default'];
-    let canvas: any = this.elementRef.nativeElement.querySelector('canvas');
+    const sp: any = require('signature_pad').default;
+    const canvas: any = this.elementRef.nativeElement.querySelector('canvas');
 
-    if ((<any>this.options)['canvasHeight']) {
-      canvas.height = (<any>this.options)['canvasHeight'];
+    if ((this.options as any).canvasHeight) {
+      canvas.height = (this.options as any).canvasHeight;
     }
 
-    if ((<any>this.options)['canvasWidth']) {
-      canvas.width = (<any>this.options)['canvasWidth'];
+    if ((this.options as any).canvasWidth) {
+      canvas.width = (this.options as any).canvasWidth;
     }
 
     this.signaturePad = new sp(canvas, this.options);
@@ -56,16 +56,20 @@ export class SignaturePad {
     // some browsers report devicePixelRatio as less than 1
     // and only part of the canvas is cleared then.
     const ratio: number = Math.max(window.devicePixelRatio || 1, 1);
-    const canvas: any = this.signaturePad._canvas;
+    const canvas: any = this.signaturePad.canvas;
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
     canvas.getContext('2d').scale(ratio, ratio);
     this.signaturePad.clear(); // otherwise isEmpty() might return incorrect value
   }
 
-   // Returns signature image as an array of point groups
+  // Returns signature image as an array of point groups
   public toData(): Array<PointGroup> {
-    return this.signaturePad.toData();
+    if (this.signaturePad) {
+      return this.signaturePad.toData();
+    } else {
+      return [];
+    }
   }
 
   // Draws signature image from an array of point groups
@@ -79,13 +83,13 @@ export class SignaturePad {
   }
 
   // Draws signature image from data URL
-  public fromDataURL(dataURL: string, options: Object = {}): void {
+  public fromDataURL(dataURL: string, options: any = {}): void {
     // set default height and width on read data from URL
-    if (!options.hasOwnProperty('height') && (<any>this.options)['canvasHeight']) {
-      options['height'] = (<any>this.options)['canvasHeight'];
+    if (!options.hasOwnProperty('height') && (this.options as any).canvasHeight) {
+      options.height = (this.options as any).canvasHeight;
     }
-    if (!options.hasOwnProperty('width') && (<any>this.options)['canvasWidth']) {
-      options['width'] = (<any>this.options)['canvasWidth'];
+    if (!options.hasOwnProperty('width') && (this.options as any).canvasWidth) {
+      options.width = (this.options as any).canvasWidth;
     }
     this.signaturePad.fromDataURL(dataURL, options);
   }
@@ -135,7 +139,7 @@ export class SignaturePad {
     this.onEndEvent.emit(true);
   }
 
-	public queryPad(): any {
-		return this.signaturePad;
-	}
+  public queryPad(): any {
+    return this.signaturePad;
+  }
 }
