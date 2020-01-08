@@ -1,6 +1,6 @@
 'use strict';
 
-import {AfterContentInit, Component, ElementRef, EventEmitter, Input, Output} from '@angular/core';
+import {AfterContentInit, Component, ElementRef, EventEmitter, Input, Output, OnDestroy} from '@angular/core';
 
 declare var require: any;
 
@@ -17,7 +17,7 @@ export type PointGroup = Array<Point>;
   selector: 'signature-pad',
 })
 
-export class SignaturePad implements AfterContentInit {
+export class SignaturePad implements AfterContentInit, OnDestroy {
 
   @Input() public options: object;
   @Output() public onBeginEvent: EventEmitter<boolean>;
@@ -49,6 +49,12 @@ export class SignaturePad implements AfterContentInit {
     this.signaturePad = new sp(canvas, this.options);
     this.signaturePad.onBegin = this.onBegin.bind(this);
     this.signaturePad.onEnd = this.onEnd.bind(this);
+  }
+
+  public ngOnDestroy(): void {
+    const canvas: any = this.elementRef.nativeElement.querySelector('canvas');
+    canvas.width = 0;
+    canvas.height = 0;
   }
 
   public resizeCanvas(): void {
