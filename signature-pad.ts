@@ -19,7 +19,7 @@ export type PointGroup = Array<Point>;
 
 export class SignaturePad implements AfterContentInit, OnDestroy {
 
-  @Input() public options: object;
+  @Input() public options: Object;
   @Output() public onBeginEvent: EventEmitter<boolean>;
   @Output() public onEndEvent: EventEmitter<boolean>;
 
