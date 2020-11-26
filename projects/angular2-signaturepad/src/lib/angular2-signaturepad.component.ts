@@ -1,8 +1,14 @@
-'use strict';
+import {
+  AfterContentInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  OnDestroy,
+} from '@angular/core';
 
-import {AfterContentInit, Component, ElementRef, EventEmitter, Input, Output, OnDestroy} from '@angular/core';
-
-declare var require: any;
+import * as SignaturePadNative from 'signature_pad';
 
 export interface Point {
   x: number;
@@ -16,10 +22,8 @@ export type PointGroup = Array<Point>;
   template: '<canvas></canvas>',
   selector: 'signature-pad',
 })
-
 export class SignaturePad implements AfterContentInit, OnDestroy {
-
-  @Input() public options: Object;
+  @Input() public options: any;
   @Output() public onBeginEvent: EventEmitter<boolean>;
   @Output() public onEndEvent: EventEmitter<boolean>;
 
@@ -35,7 +39,6 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
   }
 
   public ngAfterContentInit(): void {
-    const sp: any = require('signature_pad').default;
     const canvas: any = this.elementRef.nativeElement.querySelector('canvas');
 
     if ((this.options as any).canvasHeight) {
@@ -46,7 +49,7 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
       canvas.width = (this.options as any).canvasWidth;
     }
 
-    this.signaturePad = new sp(canvas, this.options);
+    this.signaturePad = new SignaturePadNative.default(canvas, this.options);
     this.signaturePad.onBegin = this.onBegin.bind(this);
     this.signaturePad.onEnd = this.onEnd.bind(this);
   }
@@ -62,7 +65,7 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
     // some browsers report devicePixelRatio as less than 1
     // and only part of the canvas is cleared then.
     const ratio: number = Math.max(window.devicePixelRatio || 1, 1);
-    const canvas: any = this.signaturePad._canvas;
+    const canvas: any = this.signaturePad.canvas;
     canvas.width = canvas.offsetWidth * ratio;
     canvas.height = canvas.offsetHeight * ratio;
     canvas.getContext('2d').scale(ratio, ratio);
@@ -80,7 +83,7 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
 
   // Draws signature image from an array of point groups
   public fromData(points: Array<PointGroup>): void {
-    this.signaturePad.fromData(points);
+    this.signaturePad.fromData(points as any);
   }
 
   // Returns signature image as data URL (see https://mdn.io/todataurl for the list of possible paramters)
@@ -91,7 +94,10 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
   // Draws signature image from data URL
   public fromDataURL(dataURL: string, options: any = {}): void {
     // set default height and width on read data from URL
-    if (!options.hasOwnProperty('height') && (this.options as any).canvasHeight) {
+    if (
+      !options.hasOwnProperty('height') &&
+      (this.options as any).canvasHeight
+    ) {
       options.height = (this.options as any).canvasHeight;
     }
     if (!options.hasOwnProperty('width') && (this.options as any).canvasWidth) {
@@ -122,13 +128,12 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
 
   // set an option on the signaturePad - e.g. set('minWidth', 50);
   public set(option: string, value: any): void {
-
     switch (option) {
       case 'canvasHeight':
-        this.signaturePad._canvas.height = value;
+        this.signaturePad.canvas.height = value;
         break;
       case 'canvasWidth':
-        this.signaturePad._canvas.width = value;
+        this.signaturePad.canvas.width = value;
         break;
       default:
         this.signaturePad[option] = value;

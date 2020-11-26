@@ -1,0 +1,168 @@
+{
+  "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "angular2-signaturepad": {
+      "projectType": "library",
+      "root": "projects/angular2-signaturepad",
+      "sourceRoot": "projects/angular2-signaturepad/src",
+      "prefix": "lib",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:ng-packagr",
+          "options": {
+            "tsConfig": "projects/angular2-signaturepad/tsconfig.lib.json",
+            "project": "projects/angular2-signaturepad/ng-package.json"
+          },
+          "configurations": {
+            "production": {
+              "tsConfig": "projects/angular2-signaturepad/tsconfig.lib.prod.json"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular2-signaturepad/src/test.ts",
+            "tsConfig": "projects/angular2-signaturepad/tsconfig.spec.json",
+            "karmaConfig": "projects/angular2-signaturepad/karma.conf.js"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular2-signaturepad/tsconfig.lib.json",
+              "projects/angular2-signaturepad/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    },
+    "angular2-signaturepad-test": {
+      "projectType": "application",
+      "schematics": {
+        "@schematics/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "projects/angular2-signaturepad-test",
+      "sourceRoot": "projects/angular2-signaturepad-test/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/angular2-signaturepad-test",
+            "index": "projects/angular2-signaturepad-test/src/index.html",
+            "main": "projects/angular2-signaturepad-test/src/main.ts",
+            "polyfills": "projects/angular2-signaturepad-test/src/polyfills.ts",
+            "tsConfig": "projects/angular2-signaturepad-test/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "projects/angular2-signaturepad-test/src/favicon.ico",
+              "projects/angular2-signaturepad-test/src/assets"
+            ],
+            "styles": [
+              "projects/angular2-signaturepad-test/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "projects/angular2-signaturepad-test/src/environments/environment.ts",
+                  "with": "projects/angular2-signaturepad-test/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "namedChunks": false,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "angular2-signaturepad-test:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "angular2-signaturepad-test:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "angular2-signaturepad-test:build"
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "projects/angular2-signaturepad-test/src/test.ts",
+            "polyfills": "projects/angular2-signaturepad-test/src/polyfills.ts",
+            "tsConfig": "projects/angular2-signaturepad-test/tsconfig.spec.json",
+            "karmaConfig": "projects/angular2-signaturepad-test/karma.conf.js",
+            "assets": [
+              "projects/angular2-signaturepad-test/src/favicon.ico",
+              "projects/angular2-signaturepad-test/src/assets"
+            ],
+            "styles": [
+              "projects/angular2-signaturepad-test/src/styles.scss"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "projects/angular2-signaturepad-test/tsconfig.app.json",
+              "projects/angular2-signaturepad-test/tsconfig.spec.json",
+              "projects/angular2-signaturepad-test/e2e/tsconfig.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        },
+        "e2e": {
+          "builder": "@angular-devkit/build-angular:protractor",
+          "options": {
+            "protractorConfig": "projects/angular2-signaturepad-test/e2e/protractor.conf.js",
+            "devServerTarget": "angular2-signaturepad-test:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "angular2-signaturepad-test:serve:production"
+            }
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "angular2-signaturepad"
+}
