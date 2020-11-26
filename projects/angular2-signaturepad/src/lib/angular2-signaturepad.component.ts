@@ -1,6 +1,12 @@
-'use strict';
-
-import {AfterContentInit, Component, ElementRef, EventEmitter, Input, Output, OnDestroy} from '@angular/core';
+import {
+  AfterContentInit,
+  Component,
+  ElementRef,
+  EventEmitter,
+  Input,
+  Output,
+  OnDestroy,
+} from '@angular/core';
 
 declare var require: any;
 
@@ -16,10 +22,8 @@ export type PointGroup = Array<Point>;
   template: '<canvas></canvas>',
   selector: 'signature-pad',
 })
-
 export class SignaturePad implements AfterContentInit, OnDestroy {
-
-  @Input() public options: Object;
+  @Input() public options: any;
   @Output() public onBeginEvent: EventEmitter<boolean>;
   @Output() public onEndEvent: EventEmitter<boolean>;
 
@@ -91,7 +95,10 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
   // Draws signature image from data URL
   public fromDataURL(dataURL: string, options: any = {}): void {
     // set default height and width on read data from URL
-    if (!options.hasOwnProperty('height') && (this.options as any).canvasHeight) {
+    if (
+      !options.hasOwnProperty('height') &&
+      (this.options as any).canvasHeight
+    ) {
       options.height = (this.options as any).canvasHeight;
     }
     if (!options.hasOwnProperty('width') && (this.options as any).canvasWidth) {
@@ -122,7 +129,6 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
 
   // set an option on the signaturePad - e.g. set('minWidth', 50);
   public set(option: string, value: any): void {
-
     switch (option) {
       case 'canvasHeight':
         this.signaturePad._canvas.height = value;
