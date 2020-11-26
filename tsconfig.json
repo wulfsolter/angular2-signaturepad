@@ -1,29 +1,23 @@
 {
+  "compileOnSave": false,
   "compilerOptions": {
-    "noImplicitAny": true,
-    "module": "commonjs",
-    "target": "es5",
-    "emitDecoratorMetadata": true,
+    "baseUrl": "./",
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true,
+    "declaration": false,
+    "downlevelIteration": true,
     "experimentalDecorators": true,
-    "inlineSourceMap": true,
-    "inlineSources": true,
-    "declaration": true,
-    "suppressImplicitAnyIndexErrors": true,
     "moduleResolution": "node",
-    "lib": [
-      "dom",
-      "es6"
-    ]
+    "importHelpers": true,
+    "target": "es2015",
+    "module": "es2020",
+    "lib": ["es2018", "dom"],
+    "paths": {
+      "angular2-signaturepad": [
+        "dist/angular2-signaturepad/angular2-signaturepad",
+        "dist/angular2-signaturepad"
+      ]
+    }
   },
-  "exclude": [
-    "node_modules",
-    "bundles"
-  ],
-  "files": [
-    "index.ts"
-  ],
-  "angularCompilerOptions": {
-    "genDir": "./ngfactory",
-    "debug": false
-  }
+  "angularCompilerOptions": {}
 }

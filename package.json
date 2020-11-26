@@ -1,45 +1,47 @@
 {
   "name": "angular2-signaturepad",
-  "version": "2.11.0",
-  "description": "Angular2 Component wrapper for szimek / signature_pad",
-  "main": "index.js",
-  "typings": "./index.d.ts",
+  "version": "2.11.1",
   "scripts": {
-    "prepublish": "node ./node_modules/@angular/compiler-cli/src/main.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/wulfsolter/angular2-signaturepad.git"
-  },
-  "keywords": [
-    "signature",
-    "sign",
-    "finger",
-    "canvas"
-  ],
-  "author": "Wulf Solter <wulf@wulf.co.nz> (http://wulf.co.nz)",
-  "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/wulfsolter/angular2-signaturepad/issues"
-  },
-  "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
+  "private": true,
   "dependencies": {
-    "signature_pad": "2.3.2"
-  },
-  "peerDependencies": {
-    "@angular/core": ">= 2.0.1"
+    "@angular/animations": "~11.0.0",
+    "@angular/common": "~11.0.0",
+    "@angular/compiler": "~11.0.0",
+    "@angular/core": "~11.0.0",
+    "@angular/forms": "~11.0.0",
+    "@angular/platform-browser": "~11.0.0",
+    "@angular/platform-browser-dynamic": "~11.0.0",
+    "@angular/router": "~11.0.0",
+    "rxjs": "~6.6.0",
+    "signature_pad": "^2.3.2",
+    "tslib": "^2.0.0",
+    "zone.js": "~0.10.2"
   },
   "devDependencies": {
-    "@angular/common": "2.0.1",
-    "@angular/compiler": "2.0.1",
-    "@angular/compiler-cli": "0.6.3",
-    "@angular/core": "2.0.1",
-    "@angular/platform-browser": "2.0.1",
-    "@angular/platform-browser-dynamic": "2.0.1",
-    "@angular/platform-server": "2.0.1",
-    "rxjs": "5.0.0-beta.12",
-    "typescript": "2.0.3",
-    "zone.js": "0.6.25"
+    "@angular-devkit/build-angular": "~0.1100.2",
+    "@angular/cli": "~11.0.1",
+    "@angular/compiler-cli": "~11.0.0",
+    "@types/jasmine": "~3.6.0",
+    "@types/node": "^12.11.1",
+    "codelyzer": "^6.0.0",
+    "jasmine-core": "~3.6.0",
+    "jasmine-spec-reporter": "~5.0.0",
+    "karma": "~5.1.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "ng-packagr": "^11.0.0",
+    "protractor": "~7.0.0",
+    "ts-node": "~8.3.0",
+    "tslint": "~6.1.0",
+    "typescript": "~4.0.2"
   }
 }
