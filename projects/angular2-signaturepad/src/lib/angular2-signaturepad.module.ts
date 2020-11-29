@@ -6,4 +6,4 @@ import { SignaturePad } from './angular2-signaturepad.component';
   imports: [],
   exports: [SignaturePad],
 })
-export class Angular2SignaturepadModule {}
+export class SignaturePadModule {}
