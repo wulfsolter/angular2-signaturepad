@@ -1,6 +1,6 @@
 {
   "name": "angular2-signaturepad",
-  "version": "3.0.3-beta",
+  "version": "3.0.4",
   "description": "Angular2 Component wrapper for szimek / signature_pad",
   "repository": {
     "type": "git",
