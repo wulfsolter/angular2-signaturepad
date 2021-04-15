@@ -1,6 +1,6 @@
 {
   "name": "ngx-signaturepad",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "Fork of wulfsolter/angular2-signaturepad",
   "main": "index.js",
   "typings": "./index.d.ts",
@@ -29,16 +29,16 @@
     "signature_pad": "^2.3.2"
   },
   "devDependencies": {
-    "@angular/common": "^8.2.11",
-    "@angular/compiler": "^8.2.11",
-    "@angular/compiler-cli": "^8.2.11",
-    "@angular/core": "^8.2.11",
-    "@angular/animations": "^8.2.11",
-    "@angular/platform-browser": "^8.2.11",
-    "@angular/platform-browser-dynamic": "^8.2.11",
-    "@angular/platform-server": "^8.2.11",
-    "rxjs": "^6.5.3",
-    "typescript": "3.4.5",
-    "zone.js": "^0.10.2"
+    "@angular/animations": "^11.2.10",
+    "@angular/common": "^11.2.10",
+    "@angular/compiler": "^11.2.10",
+    "@angular/compiler-cli": "^11.2.10",
+    "@angular/core": "^11.2.10",
+    "@angular/platform-browser": "^11.2.10",
+    "@angular/platform-browser-dynamic": "^11.2.10",
+    "@angular/platform-server": "^11.2.10",
+    "rxjs": "^6.6.7",
+    "typescript": "^4.1.5",
+    "zone.js": "^0.11.4"
   }
 }
