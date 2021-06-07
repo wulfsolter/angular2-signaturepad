@@ -9,7 +9,6 @@
     "lint": "ng lint",
     "e2e": "ng e2e"
   },
-  "main": "/dist/esm2015/angular2-signaturepad.js",
   "dependencies": {
     "@angular/animations": "~11.1.0",
     "@angular/common": "~11.1.0",
