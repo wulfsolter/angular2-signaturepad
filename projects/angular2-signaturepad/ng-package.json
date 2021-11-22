@@ -3,6 +3,5 @@
   "dest": "../../dist/angular2-signaturepad",
   "lib": {
     "entryFile": "src/public-api.ts"
-  },
-  "whitelistedNonPeerDependencies": ["signature_pad"]
+  }
 }
