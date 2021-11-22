@@ -28,16 +28,6 @@
             "tsConfig": "projects/angular2-signaturepad/tsconfig.spec.json",
             "karmaConfig": "projects/angular2-signaturepad/karma.conf.js"
           }
-        },
-        "lint": {
-          "builder": "@angular-devkit/build-angular:tslint",
-          "options": {
-            "tsConfig": [
-              "projects/angular2-signaturepad/tsconfig.lib.json",
-              "projects/angular2-signaturepad/tsconfig.spec.json"
-            ],
-            "exclude": ["**/node_modules/**"]
-          }
         }
       }
     }
