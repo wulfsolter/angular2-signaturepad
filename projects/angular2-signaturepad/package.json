@@ -19,11 +19,11 @@
   },
   "homepage": "https://github.com/wulfsolter/angular2-signaturepad#readme",
   "peerDependencies": {
-    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0",
-    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0"
+    "@angular/common": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
+    "@angular/core": "^8.0.0 || ^9.0.0 || ^10.0.0 || ^11.0.0 || ^12.0.0 || ^13.0.0",
+    "signature_pad": "2.3.2"
   },
   "dependencies": {
-    "tslib": "^2.0.0",
-    "signature_pad": "2.3.2"
+    "tslib": "^2.0.0"
   }
 }
