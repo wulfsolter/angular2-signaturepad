@@ -53,8 +53,13 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
     }
 
     this.signaturePad = new sp(canvas, this.options);
-    this.signaturePad.beginStroke = this.onBegin.bind(this);
-    this.signaturePad.endStroke = this.onEnd.bind(this);
+    this.signaturePad.addEventListener('beginStroke', () => {
+      this.onBeginEvent.emit(true);
+    });
+
+    this.signaturePad.addEventListener('endStroke', () => {
+      this.onEndEvent.emit(true);
+    });
   }
 
   public ngOnDestroy(): void {
@@ -141,16 +146,6 @@ export class SignaturePad implements AfterContentInit, OnDestroy {
       default:
         this.signaturePad[option] = value;
     }
-  }
-
-  // notify subscribers on signature begin
-  public onBegin(): void {
-    this.onBeginEvent.emit(true);
-  }
-
-  // notify subscribers on signature end
-  public onEnd(): void {
-    this.onEndEvent.emit(true);
   }
 
   public queryPad(): any {
